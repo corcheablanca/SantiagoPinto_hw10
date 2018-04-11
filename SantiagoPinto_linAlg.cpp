@@ -11,23 +11,25 @@ int main()
  double** matB;
 
  //llenar A
+ cout<<"ingrese numero filas de A";
+ int N;
+ int M;
+ cin>>(N) ;
+ cout<<"ingrese numero columnas de A";
+ cin>>(M);
+ matA= get_Matrix(N,M);
+  
+//llenar B
+ cout<<"ingrese numero filas de B";
+ int N2;
+ int M2;
+ cin>>(N2); 
+ cout<<"ingrese numero columnas de B";
+ cin>>(M2);
+ matB= get_Matrix(N2,M2);
 
- double**matA=new double*[4]; 
- int i;
-  for (i=0; i<4; i++)
-{
-   mat[i]=new double[5];
-}
-  int j;
-   for (i=0; i<4; i++)
-{
-   for (j=0; j<5; j++)
-{
-   mat[i][j]=i*j;
-   cout<<mat[i][j]<<"";
-}
-   cout<<endl; 
-     
+ cout << matrix_product(matA,matB,N,M,N2,M2);
+ 
 }
    return 0;
 
@@ -64,10 +66,31 @@ return matC
 }
 
 
+// metodo que pide una a una las componenetes de la matriz
+double** get_Matrix(int N, int M)
+{
+double** matA;
+double**matA=new double*[N]; 
+ int i;
+ i=N;
+  for (i=0; i<4; i++)
+{
+   mat[i]=new double[5];
+}
+  int j;
+  j=M;
+   for (i=0; i<4; i++)
+{
+   for (j=0; j<5; j++)
+{
 
-
-
-
-
-
+   cout<<"insertar el"<< i <<""<< j << "esimo elemento";
+   double var;
+   cin>> var;
+   matA[i][j]= var;  
+}
+    
+}
+return matA
+}
 
